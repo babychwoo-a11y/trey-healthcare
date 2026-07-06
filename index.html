@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>🏥Trey Healthcare</title>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div id="loader">
+    <h1>🏥 Trey Healthcare</h1>
+    <p>Loading Patient Portal...</p>
+</div>
+
+<div id="mainContent" style="display:none;">
+
+          <button onclick="toggleDarkMode()">
+        Dark Mode
+    </button>
+
+         <nav>
+       
+    <h2>Trey Healthcare</h2>
+    <button class="menu-btn" onclick="toggleMenu()">
+    ☰
+</button>
+
+    <div id="navLinks">
+        <a href="#hero">Home</a>
+        <a href="#services">Services</a>
+        <a href="#doctors">Doctors</a>
+        <a href="#appointments">Appointments</a>
+        <a href="#dashboard">Dashboard</a>
+        <a href="#login">Login</a>
+        <button id="logoutBtn" onclick="logout()" style="display: none;">
+            Logout
+        </button>
+          <div id="notificationBell" onclick="openNotifications()">
+    🔔 <span id="notificationCount">0</span>
+</div>   
+    </div>
+    <div class="logo">
+        🏥Trey Healthcare
+    </div>
+    </nav>
+
+    <section id="hero">
+        <p class="hero-badge">
+            ⭐Trusted by over 12,000 patients across Kenya
+        </p>
+
+    <h1>Your Health, Our Priority</h1>
+
+    <p>
+        Professional healthcare services with experienced doctors,
+        modern facilities and online appointment booking.
+    </p>
+
+    <button onclick="document.location='#appointments'">
+        Book Appointment
+    </button>
+
+    <button onclick="document.location='#doctors'">
+        Find a Doctor
+    </button>
+
+    <button onclick="document.location='#contact'">
+        Contact Us
+    </button>
+    <img src="hospital.jpg" class="hero-badge" alt="Hospital">
+
+</section>
+<section id="stats">
+
+    <div class="stat">
+        <h2 id="doctorStat">25+</h2>
+        <p>Doctors</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="patientStat">12000</h2>
+        <p>Patients</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="emergencyStat">24/7</h2>
+        <p>Emergency</p>
+    </div>
+
+    <div class="stat">
+        <h2 id="satisfactionStat">99%</h2>
+        <p>Patient Satisfaction</p>
+    </div>
+
+</section>
+<section id="why">
+
+<h1>Why Choose Trey Healthcare?</h1>
+
+<div class="services-container">
+
+<div class="services">
+<h2>🚑 24/7 Emergency</h2>
+<p>Emergency care whenever you need it.</p>
+</div>
+
+<div class="services">
+<h2>👨‍⚕️ Expert Doctors</h2>
+<p>Experienced specialists in every department.</p>
+</div>
+
+<div class="services">
+<h2>💻 Online Booking</h2>
+<p>Book appointments from anywhere.</p>
+</div>
+
+<div class="services">
+<h2>🏥 Modern Facilities</h2>
+<p>Advanced medical equipment and laboratories.</p>
+</div>
+
+</div>
+
+</section>
+         <p>
+            Welcome to Trey Healthcare we provide health services plus appointments and booking our doctors are here ready.
+        </p>
+
+          <p id="counter">Patients Served 0</p>
+          <button onclick="addPatients()">
+              New patients
+          </button>    
+          <button onclick="welcomePatient()">
+            Welcome
+        </button>   
+        <input type="text" id="searchBox" placeholder="Search doctors...">
+        <button>Search</button>
+        <section id="doctors">
+            <h1>Our Doctors</h1>
+            <div class="doctors-container">
+            <div class="doctor">
+                <h2>
+                    <a href="doctor-james.html">
+                        Dr.James Smith
+                    </a>
+                </h2>    
+                <p>Cardiologist</p>
+                <p>⭐⭐⭐⭐⭐4.9 (254 reviews)</p>
+                <p class="available">🟢Available Today</p>
+                <img src="doctor1.jpg" alt="Dr.James Smith" width="150">
+                
+<p><strong>Status:</strong>
+<span id="doctor1Status" class="available">
+🟢 Available Today
+</span>
+</p>
+               <button onclick="openDoctor(
+'Dr. James Smith',
+'Cardiologist',
+'4.9 (254 Reviews)',
+'12 Years Experience',
+'james@treyhealthcare.com',
+'+254 700 111 222',
+'Mon - Fri | 8:00 AM - 5:00 PM',
+[
+'⭐⭐⭐⭐⭐ Excellent doctor!',
+'⭐⭐⭐⭐⭐ Very caring and professional.',
+'⭐⭐⭐⭐ Helped me recover quickly.'
+]
+)">
+View Profile
+
+            </div>
+            <div class="doctor">
+                <h2>
+                    <a href="doctor-sarah.html">
+                        Dr.Sarah Johnson
+                    </a>
+                </h2>
+                <p>Pediatrician</p>
+                <p>⭐⭐⭐⭐4.7 (120 reviews)</p>
+                <p class="busy">🔴 On Leave</p>
+                <img src="doctor2.jpg" alt="Dr.Sarah Johnson" width="150">
+                 <p><strong>Status:</strong>
+<span id="doctor3Status" class="leave">
+🔴 On Leave
+</span>
+</p>
+                <button>View Profile</button>
+               
+            </div>
+            <div class="doctor">
+                <h2>Dr.Michael Brown</h2>
+                <p>Neurologist</p>
+                <p>⭐⭐⭐⭐⭐4.8 (234 reviews)</p>
+                <p class="soon">🟡 Available Tommorow</p>
+                <img src="doctor3.jpg" alt="Dr.Michael Brown" width="150">
+                <p><strong>Status:</strong>
+<span id="doctor2Status" class="busy">
+🟡 Busy
+</span>
+</p>
+                <button>View Profile</button>
+                
+            </div>
+            <div class="doctor">
+                <h2>Dr.Emily Davis</h2>
+                <p>Dermatologist</p>
+                <p>⭐⭐⭐⭐4.6 (135 reviews)</p>
+                <p class="available">🟢 Available Today</p>
+                <img src="doctor4.jpg" alt="Dr.Emily Davis" width="150">
+                <button>View Profile</button>
+            </div>
+            </div>
+        </section>
+        <section id="services">
+            <h1>Our Services</h1>
+            <div class="services-container">
+                <div class="services">
+                    <h2>❤Cardiology</h2>
+                </div>
+                <div class="services">
+                    <h2>🧑Pediatrics</h2>
+                </div>
+                <div class="services">
+                    <h2>🧠Neurology</h2>
+                </div>
+                <div class="services">
+                    <h2>🩺Dermatology</h2>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonials">
+
+<h1>What Our Patients Say</h1>
+
+<div class="services-container">
+
+    <div class="services">
+        <h2>⭐⭐⭐⭐⭐</h2>
+        <p>"The doctors were very professional and caring."</p>
+        <strong>- Mary W.</strong>
+    </div>
+
+    <div class="services">
+        <h2>⭐⭐⭐⭐⭐</h2>
+        <p>"Booking an appointment was fast and easy."</p>
+        <strong>- James K.</strong>
+    </div>
+
+    <div class="services">
+        <h2>⭐⭐⭐⭐⭐</h2>
+        <p>"Excellent facilities and friendly staff."</p>
+        <strong>- Sarah M.</strong>
+    </div>
+
+</div>
+
+</section>
+
+        <section id="appointments">
+            <h1>Book Appointment</h1>
+            <form id="appointmentForm">
+            
+<input type="text" id="patientNameInput"><br><br>
+
+<label>Email:</label><br>
+<input type="email" id="patientEmail"><br><br>
+
+<label>Select Doctor:</label><br>
+<select id="doctor" onchange="updateAvailableTimes()" checkDoctorAvailability>
+    <option>Dr. James Smith</option>
+    <option>Dr. Sarah Johnson</option>
+    <option>Dr. Michael Brown</option>
+    <option>Dr. Emily Davis</option>
+</select><br><br>
+
+<label>Date:</label><br>
+<input type="date" id="appointmentDate"><br><br>
+<label>Appointment Type:</label><br>
+
+<select id="appointmentType">
+    <option>General Checkup</option>
+    <option>Cardiology</option>
+    <option>Pediatrics</option>
+    <option>Dermatology</option>
+    <option>Neurology</option>
+</select><br><br>
+
+<label>Time:</label><br>
+<select id="time">
+    <option>09:00 AM</option>
+    <option>10:00 AM</option>
+    <option>11:00 AM</option>
+</select><br><br>
+<h3 Patient Reviews></h3>
+<ul id="doctorReviews"></ul>
+
+<button id="bookBtn" type="button" onclick="bookAppointment()">
+    Book Appointment
+</button>
+</form>
+        </section>
+                
+                
+
+        <section id="register">
+            <h1>Create Account</h1>
+            <form id="registerForm">
+                <label>Full Name:</label>
+                <input type="text" id="regName">
+                <label>Email:</label>
+                <input type="email" id="regEmail">
+                <label>Password:</label>
+                <input type="password" id="regPassword">
+                <button type="submit">
+                    Register
+                </button>
+            </form>
+        </section>
+
+        <section id="login">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <label>Email:</label><br>
+                <input type="email" id="loginEmail"><br><br>
+                <label>Password:</label><br>
+                <input type="password" id="loginPassword"><br><br>
+                <button type="submit">Login</button>
+            </form>
+        </section>
+
+      <section id="dashboard">
+        <h3 id="welcomeMessage">
+            Welcome back!
+        </h3>
+
+    <div id="dashboardProfile">
+        <img id="dashboardAvatar" 
+            src="patient.png"
+            alt="Patient Profile">
+        <h2 id="patientName">Guest</h2>
+        <p>Patient ID: TR-2026-001</p>
+        <p id="todayDate"></p>
+        <p id="lastLogin"></p>
+    </div>
+      
+    
+    <h1>Patient Dashboard</h1>
+
+    <div class="services-container">
+
+        <div class="services">
+            <h2 id="appointmentCount">0</h2>
+            <p>Appointments</p>
+        </div>
+
+        <div class="services">
+            <h2 id="doctorCount">4</h2>
+            <p>Doctors Available</p>
+        </div>
+
+        <div class="services">
+            <h2>999</h2>
+            <p>Emergency</p>
+        </div>
+
+        <div class="services">
+            <h2>24/7</h2>
+            <p>Support</p>
+        </div>
+
+        <div class="services">
+    <h2>🕒 Last Login</h2>
+    <p id="lastLogin">
+        Never
+    </p>
+</div>
+
+    </div>
+
+    <div class="health-summary">
+    <h2>🩺 Health Summary</h2>
+
+    <p><strong>Blood Group:</strong> <span id="summaryBlood">Not Set</span></p>
+
+    <p><strong>Height:</strong> <span id="summaryHeight">Not Set</span></p>
+
+    <p><strong>Weight:</strong> <span id="summaryWeight">Not Set</span></p>
+
+    <p><strong>Allergies:</strong> <span id="summaryAllergies">None</span></p>
+</div>
+      </section>
+      <section id="emergency">
+
+    <h2>🚑 Emergency Assistance</h2>
+
+    <button onclick="showEmergency()">
+        Emergency SOS
+    </button>
+
+    <div id="emergencyInfo" style="display:none; margin-top:15px;">
+        <p><strong>Emergency Hotline:</strong> 999</p>
+        <p><strong>Ambulance:</strong> +254 700 123 456</p>
+        <p><strong>Nearest Trey Healthcare Branch:</strong> Nairobi Main Hospital</p>
+    </div>
+
+</section>
+
+<section id="adminDashboard">
+
+<h1>👨‍💼 Admin Dashboard</h1>
+
+<div class="services-container">
+
+<div class="services">
+<h2 id="adminPatients">0</h2>
+<p>Registered Patients</p>
+</div>
+
+<div class="services">
+<h2 id="adminAppointments">0</h2>
+<p>Total Appointments</p>
+</div>
+
+<div class="services">
+<h2 id="adminCompleted">0</h2>
+<p>Completed</p>
+</div>
+
+<div class="services">
+<h2 id="adminUpcoming">0</h2>
+<p>Upcoming</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="statistics">
+
+<h1>📊 Appointment Statistics</h1>
+
+<canvas id="appointmentChart"></canvas>
+
+</section>
+
+
+    <section id="medicalRecords">
+
+<h1>Medical Records</h1>
+
+<label>Blood Group</label><br>
+<input type="text" id="bloodGroup"><br><br>
+
+<label>Allergies</label><br>
+<textarea id="allergies"></textarea><br><br>
+
+<label>Current Medication</label><br>
+<textarea id="medication"></textarea><br><br>
+
+<label>Height (cm)</label><br>
+<input type="number" id="height"><br><br>
+
+<label>Weight (kg)</label><br>
+<input type="number" id="weight"><br><br>
+
+<label>Emergency Contact</label><br>
+<input type="text" id="emergencyContact"><br><br>
+
+<button onclick="saveMedicalRecord()">
+Save Medical Record
+</button>
+
+</section>
+
+<section id="prescriptions">
+
+    <h1>💊 Prescriptions & Medical Reports</h1>
+
+    <div class="services">
+
+        <h3>Latest Prescription</h3>
+
+        <p><strong>Prescription No:</strong> <span id="prescriptionId"></span></p>
+
+        <p><strong>Doctor:</strong> <span id="prescriptionDoctor">None</span></p>
+
+        <p><strong>Date:</strong> <span id="prescriptionDate">None</span></p>
+
+        <p><strong>Medicine:</strong> <span id="prescriptionMedicine">No prescription yet.</span></p>
+
+        <p><strong>Dosage:</strong> <span id="prescriptionDosage">-</span></p>
+
+        <p><strong>Instructions:</strong> <span id="prescriptionInstructions">-</span></p>
+
+        <h3>Doctor's Signature</h3>
+        <p id="doctorSignature"></p>
+
+        <button onclick="printPrescription()">
+    🖨️ Print Prescription
+</button>
+
+        <button onclick="issuePrescription()">
+    Generate Sample Prescription
+</button>
+
+    </div>
+
+</section>
+
+<section id="patientReviews">
+
+    <h1>⭐ Rate Your Doctor</h1>
+
+    <label>Select Doctor</label><br>
+
+    <select id="reviewDoctor">
+        <option>Dr. James Smith</option>
+        <option>Dr. Sarah Johnson</option>
+        <option>Dr. Michael Brown</option>
+        <option>Dr. Emily Davis</option>
+    </select>
+
+    <br><br>
+
+    <label>Rating</label><br>
+
+    <select id="reviewRating">
+        <option>⭐⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐⭐</option>
+        <option>⭐⭐⭐</option>
+        <option>⭐⭐</option>
+        <option>⭐</option>
+    </select>
+
+    <br><br>
+
+    <label>Your Review</label><br>
+
+    <textarea
+        id="reviewText"
+        rows="4"
+        placeholder="Share your experience..."></textarea>
+
+    <br><br>
+
+    <button onclick="submitReview()">
+        Submit Review
+    </button>
+
+</section>
+
+<h2>Patient Reviews</h2>
+
+<div id="reviewList">
+
+    <p>No reviews yet.</p>
+
+</div>
+
+<section id="medicineReminder">
+
+<h1>💊 Medicine Reminder</h1>
+
+<label>Medicine Name</label><br>
+<input type="text" id="medicineName"><br><br>
+
+<label>Time</label><br>
+<input type="time" id="medicineTime"><br><br>
+
+<button onclick="saveMedicine()">
+Save Reminder
+</button>
+
+<h2>Saved Reminders</h2>
+
+<div id="medicineList">
+No reminders yet.
+</div>
+
+</section>
+
+<section>
+    <h2>Quick Actions</h2>
+
+<div class="services-container">
+
+    <div class="services">
+        <button onclick="document.location='#appointments'">
+            📅 Book Appointment
+        </button>
+    </div>
+
+    <div class="services">
+        <button onclick="document.location='#history'">
+            📋 View History
+        </button>
+    </div>
+
+    <div class="services">
+        <button onclick="document.location='#doctors'">
+            👨‍⚕️ Find Doctor
+        </button>
+    </div>
+    
+    <div class="services">
+        <button onclick="document.location='#emergency'">
+            🚑 Emergency
+        </button>
+    </div>
+</div>
+</section>
+
+
+    <section id="contact">
+
+    <h1>Contact Us</h1>
+
+    <div class="services-container">
+
+        <div class="services">
+            <h2>📍 Address</h2>
+            <p>Trey Healthcare Hospital</p>
+            <p>Nairobi, Kenya</p>
+        </div>
+
+        <div class="services">
+            <h2>📞 Phone</h2>
+            <p>+254 700 123 456</p>
+            <p>Emergency: 999</p>
+        </div>
+
+        <div class="services">
+            <h2>📧 Email</h2>
+            <p>info@treyhealthcare.com</p>
+            <p>support@treyhealthcare.com</p>
+        </div>
+    
+
+        <div class="services">
+            <h2>🕒 Opening Hours</h2>
+            <p>Monday - Friday: 8:00 AM - 8:00 PM</p>
+            <p>Saturday - Sunday: 9:00 AM - 5:00 PM</p>
+        </div>
+
+    </div>
+
+    <h2 style="text-align:center;">Send Us a Message</h2>
+
+    <form id="contactForm">
+
+        <input type="text" placeholder="Your Name" required><br><br>
+
+        <input type="email" placeholder="Your Email" required><br><br>
+
+        <textarea placeholder="Your Message"
+        rows="5"
+        cols="40"
+        required></textarea><br><br>
+
+        <button type="submit">Send Message</button>
+
+    </form>
+    </section> 
+
+
+
+</section>
+
+<section id="faq">
+
+    <h1>Frequently Asked Questions</h1>
+
+    <details>
+        <summary>How do I book an appointment?</summary>
+        <p>Go to the Appointments section, fill in your details and click Book Appointment.</p>
+    </details>
+
+    <details>
+        <summary>Can I choose my doctor?</summary>
+        <p>Yes. Select your preferred doctor from the dropdown list.</p>
+    </details>
+
+    <details>
+        <summary>Is emergency service available?</summary>
+        <p>Yes. Our emergency department is available 24 hours a day.</p>
+    </details>
+
+    <details>
+        <summary>Can I cancel an appointment?</summary>
+        <p>Yes. Use the Delete button in your appointment history.</p>
+    </details>
+
+</section>
+
+<section>
+    <h3>Appointment Receipt</h3>
+
+<div id="receipt" style="display:none; border:1px solid #ccc; padding:15px; margin-top:15px;">
+    <h4>Appointment Confirmed ✅</h4>
+
+    <p><strong>Receipt ID:</strong> <span id="receiptId"></span></p>
+    <p><strong>Doctor:</strong> <span id="receiptDoctor"></span></p>
+    <p><strong>Date:</strong> <span id="receiptDate"></span></p>
+    <p><strong>Time:</strong> <span id="receiptTime"></span></p>
+    <p><strong>Status:</strong> <span id="receiptStatus"></span></p>
+
+    <button onclick="printReceipt()">
+    🖨️ Print Receipt
+</button>
+</div>
+</section>
+
+ <section id="profile">
+
+<h1>Patient Profile</h1>
+
+<img id="profilePic"
+src="https://via.placeholder.com/120"
+alt="Profile Picture">
+
+<br><br>
+
+<input type="file"
+id="imageUpload"
+accept="image/*">
+
+<label>Full Name</label><br>
+<input type="text" id="profileName"><br><br>
+
+<label>Email</label><br>
+<input type="email" id="profileEmail"><br><br>
+
+<label>Phone Number</label><br>
+<input type="tel" id="profilePhone"><br><br>
+
+<button onclick="saveProfile()">
+Save Profile
+</button>
+ </section>
+
+<section id="notifications">
+
+    <h1>Notifications</h1>
+
+    <div id="notificationBox">
+        No new notifications.
+    </div>
+
+</section>
+
+<section id="notifications">
+
+    <h1>🔔 Notifications</h1>
+
+    <div id="notificationList">
+
+        <p>No notifications yet.</p>
+
+    </div>
+
+</section>
+
+         <section id="history">
+            <h1>Appointment History</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Appointment ID</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+   
+
+    <tbody id="historyTable">
+
+    </tbody>
+</table>
+</section>
+
+<section id="timeline">
+
+<h1>Appointment Timeline</h1>
+
+<div class="timeline">
+
+    <div class="timeline-item">
+        <span>📝</span>
+        <h3>Registered</h3>
+        <p>Account created successfully.</p>
+    </div>
+
+    <div class="timeline-item">
+        <span>📅</span>
+        <h3>Appointment Booked</h3>
+        <p id="timelineBooking">
+            No appointment booked yet.
+        </p>
+    </div>
+
+    <div class="timeline-item">
+        <span>👨‍⚕️</span>
+        <h3>Doctor Assigned</h3>
+        <p id="timelineDoctor">
+            Waiting...
+        </p>
+    </div>
+
+    <div class="timeline-item">
+        <span>✅</span>
+        <h3>Consultation</h3>
+        <p id="timelineStatus">
+            Pending
+        </p>
+    </div>
+
+</div>
+
+</section>
+
+<section id="assistant">
+
+    <h1>🩺 Trey Healthcare Virtual Assistant</h1>
+
+    <div id="chatBox">
+        <p><strong>Assistant:</strong> Hello! How can I help you today?</p>
+    </div>
+
+    <input
+        type="text"
+        id="userQuestion"
+        placeholder="Ask a health question...">
+
+    <button onclick="askAssistant()">
+        Send
+    </button>
+
+</section>
+
+<div id="floatingButton" onclick="toggleQuickMenu()">
+    +
+</div>
+
+<div id="quickMenu">
+
+    <button onclick="location.href='#appointments'">
+        📅 Appointment
+    </button>
+
+    <button onclick="location.href='#emergency'">
+        🚑 Emergency
+    </button>
+
+    <button onclick="location.href='#assistant'">
+        💬 Assistant
+    </button>
+
+    <button onclick="location.href='#dashboard'">
+        📊 Dashboard
+    </button>
+
+</div>
+
+<section id="healthTips">
+
+    <h1>📰 Health Tips</h1>
+
+    <div id="tipBox">
+        Welcome to Trey Healthcare!
+    </div>
+
+</section>
+
+<section id="branches">
+
+<h1>🏥 Our Branches</h1>
+
+<div class="services-container">
+
+<div class="services">
+<h2>📍 Nairobi</h2>
+<p>Main Hospital</p>
+<p>☎ +254 700 123 456</p>
+<p>24/7 Emergency</p>
+<button onclick="windows.open('https://www.google.com/maps/search/Nairobi+Hospital')">
+    Get Directions
+</button>
+</div>
+
+<div class="services">
+<h2>📍 Mombasa</h2>
+<p>Coast Branch</p>
+<p>☎ +254 700 234 567</p>
+<p>Open 24 Hours</p>
+<button onclick="windows.open('https://www.google.com/maps/search/Mombasa+Hospital')">
+    Get Directions
+</button>
+</div>
+
+<div class="services">
+<h2>📍 Kisumu</h2>
+<p>Lake Region Branch</p>
+<p>☎ +254 700 345 678</p>
+<p>General Hospital</p>
+<button onclick="windows.open('https://www.google.com/maps/search/Kisumu+Hospital')">
+    Get Directions
+</button>
+</div>
+
+<div class="services">
+<h2>📍 Nakuru</h2>
+<p>Central Branch</p>
+<p>☎ +254 700 456 789</p>
+<p>Emergency & Outpatient</p>
+<button onclick="windows.open('https://www.google.com/maps/search/Nakuru+Hospital')">
+    Get Directions
+</button>
+</div>
+
+</div>
+
+</section>
+
+<section id="calendar">
+
+    <h1>📅 Appointment Calendar</h1>
+
+    <input
+        type="date"
+        id="calendarDate"
+        onchange="showAppointmentsByDate()">
+
+    <div id="calendarResults">
+
+        <p>Select a date to view appointments.</p>
+
+    </div>
+
+</section>
+
+<section id="analytics">
+
+<h1>📊 Hospital Analytics</h1>
+
+<div class="services-container">
+
+<div class="services">
+<h2 id="todayAppointments">0</h2>
+<p>Today's Appointments</p>
+</div>
+
+<div class="services">
+<h2 id="completedAppointments">0</h2>
+<p>Completed</p>
+</div>
+
+<div class="services">
+<h2 id="cancelledAppointments">0</h2>
+<p>Cancelled</p>
+</div>
+
+<div class="services">
+<h2 id="upcomingAppointments">0</h2>
+<p>Upcoming</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="charts">
+
+<h1>📈 Hospital Statistics</h1>
+
+<canvas id="doctorChart"></canvas>
+
+<h2>Appointment Status</h2>
+
+<div class="chart-container">
+<canvas id="statusChart"></canvas>
+</div>
+
+</section>
+
+<section id="adminLogin">
+
+    <h1>👨‍💼 Admin Login</h1>
+
+    <input type="text"
+           id="adminUsername"
+           placeholder="Username">
+
+    <br><br>
+
+    <input type="password"
+           id="adminPassword"
+           placeholder="Password">
+
+    <br><br>
+
+    <button onclick="adminLogin()">
+        Login
+    </button>
+
+</section>
+
+<section id="admin" style="display: none;">
+
+    <h1>👨‍💼 Admin Panel</h1>
+
+    <div class="services-container">
+
+        <div class="services">
+            <h2 id="adminPatients">0</h2>
+            <p>Registered Patients</p>
+        </div>
+
+        <div class="services">
+            <h2 id="adminAppointments">0</h2>
+            <p>Appointments</p>
+        </div>
+
+        <div class="services">
+            <h2 id="adminReviews">0</h2>
+            <p>Reviews</p>
+        </div>
+
+        <div class="services">
+            <h2 id="adminDoctors">4</h2>
+            <p>Doctors</p>
+        </div>
+
+    </div>
+
+</section>
+
+<h2>📅 Manage Appointments</h2>
+
+<table border="1">
+
+    <thead>
+
+        <tr>
+            <th>ID</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+
+    </thead>
+
+    <tbody id="adminAppointmentTable">
+
+    </tbody>
+
+</table>
+
+
+        <section id="emergency">
+            <h1>Emergency Contact</h1>
+            <p>📞Emergency Hotline:999</p>
+            <p>🚑Ambulance Service Available 24/7</p>
+        </section>
+       
+     
+</script>
+<footer>
+    <p>&copy; 2026 Trey Healthcare.All rights Reserved</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+</div>
+<div id="doctorModal" class="modal">
+
+    <div class="modal-content">
+
+        <span class="close" onclick="closeDoctor()">&times;</span>
+
+        <h2 id="modalName"></h2>
+
+        <p id="modalSpecialty"></p>
+        <p id="modalRating"></p>
+        <p id="modalExperience"></p>
+        <p id="modalEmail"></p>
+        <p id="modalPhone"></p>
+        <p id="modalHours"></p>
+
+        <button onclick="location.href='#appointments'">
+            Book Appointment
+        </button>
+
+    </div>
+
+</div>
+
+    </body>
+</html>
+
